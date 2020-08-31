@@ -1,0 +1,90 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="design.css">
+    <script src="js/utils.js"></script>
+    <script src="js/item.js"></script>
+    <script src="js/itemoperations.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <h1 class='text-center'>Menu Managment system</h1>
+        <div class='form-group'>
+                <label for="">Customer ID</label>
+                <input id='id' class='form-control' placeholder='Type Name Here' type="text">
+            </div>
+        <div class='form-group'>
+            <label for="">Food ID</label>
+            <input id='name' class='form-control' placeholder='Type Name Here' type="text">
+        </div>
+        <div class='form-group'>
+                <label for="">Choice </label><br>
+                <input type="radio" name='gender' value='Non-Veg'>Non-Veg
+                <input type="radio" name='gender' value='Veg'> Veg<br>
+            </div>
+        <div class='form-group'>
+            <label for="">Quantity</label>
+            <input id='price' class='form-control' type="range" min="1" max="10" onchange="output.value=value" step="1">
+            <output id="output">1 </output>
+        </div>
+        <div class='form-group'>
+            <label for="">Customization Required</label>
+            <textarea id='desc' placeholder="Type Here" class='form-control' cols="30" rows="5"></textarea>
+        </div>
+        
+        <div class='form-group'>
+                <label for="">Feedback</label>
+                <textarea id='desc' placeholder="Type Here" class='form-control' cols="30" rows="5"></textarea>
+            </div>
+            
+        <div class='form-group'>
+            <button id='add' class='btn btn-primary'>Repeat Previous Order</button>
+            <button id='remove' class='btn btn-danger'>Cancel </button>
+            <button id='search' class='btn btn-info'>Search Menu</button>
+            <button id='update' class='btn btn-secondary'>Customize product</button>
+           
+          
+        </div>
+        <div id='searchbar'>
+            <select id="searchby">
+                    <option value="price">By Price</option>
+                    <option value="name">By Name</option>
+                    <option value="id">By Id</option>
+                </select>
+            <input type="text" placeholder="Type Here to Search" id='searchTxt'>
+        </div>
+        <div class='form-group'>
+                <button id='add' class='btn btn-primary' onclick="">Add</button>
+            </div>
+        <h3>Menu  <span id='total'></span>Record <span id='mark'></span></h3>
+        <table class='table table-bordered'>
+            <thead class='thead-dark'>
+                <tr>
+                    <th> Customer Id</th>
+                    <th> Food ID</th>
+                    <th>Choice</th>
+                    <th>Quantity</th>
+                    <th>Customization</th>
+                    <th>Feedback</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody id='items'>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
